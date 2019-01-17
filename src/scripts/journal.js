@@ -15,8 +15,16 @@ const functionsJournalEntry = {
     mood: "I've got this!"
 };
 
+const buildingComponentsJournalEntry = {
+    date: "16Jan18",
+    concepts: "Building DOM Components",
+    entry: "Used vanilla JS to build DOM components. Learned about rest operators. Created generic functions that can be used to construct all kinds of new DOM elements. Learned to use DOM fragments. Rest operators were harder to understand, as they didn't appear as readable.",
+    mood: "blerg."
+};
+
 allJournalEntries.push(objectsJournalEntry);
 allJournalEntries.push(functionsJournalEntry);
+allJournalEntries.push(buildingComponentsJournalEntry);
 
 
 console.log(allJournalEntries);
