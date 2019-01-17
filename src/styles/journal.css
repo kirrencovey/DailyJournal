@@ -1,4 +1,21 @@
 fieldset {
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid darkcyan;
+    margin: 1em 0;
+}
+
+body {
+    color: lightseagreen;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+    background-color: lightseagreen;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 8px;
 }
