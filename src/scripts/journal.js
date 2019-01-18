@@ -1,30 +1,43 @@
-let allJournalEntries = [];
+// Create HTML structure for a journal entry
+
+const makeJournalEntryComponent = (journalEntry) => { 
+    return `
+    <div class="journal__entry">
+    <h3>Concepts Covered: ${journalEntry.concepts}</h3>
+    <h5>${journalEntry.date}</h4>
+    <p>${journalEntry.entry}</p>
+    <h4>Mood: ${journalEntry.mood}</h4>
+    </div>
+    `
+}
 
 
-const objectsJournalEntry = {
-    date: "11Jan18",
-    concepts: "JS Object Basics",
-    entry: "Learned what an object is and how it's structured. Setting and accessing values using dot notation and square bracket notation.",
-    mood: "happy"
-};
+// Select section that will contain journal entries on the DOM
 
-const functionsJournalEntry = {
-    date: "14Jan18",
-    concepts: "JS Function Practice",
-    entry: "Did many practice exercises with functions. Pure and impure functions. ChickenMonkey.",
-    mood: "I've got this!"
-};
+const journalSection = document.querySelector("#journal__section")
 
-const buildingComponentsJournalEntry = {
-    date: "16Jan18",
-    concepts: "Building DOM Components",
-    entry: "Used vanilla JS to build DOM components. Learned about rest operators. Created generic functions that can be used to construct all kinds of new DOM elements. Learned to use DOM fragments. Rest operators were harder to understand, as they didn't appear as readable.",
-    mood: "blerg."
-};
+// Create HTML structure for each entry and add to the DOM
 
-allJournalEntries.push(objectsJournalEntry);
-allJournalEntries.push(functionsJournalEntry);
-allJournalEntries.push(buildingComponentsJournalEntry);
+for (let entry of allJournalEntries) {
+    let newEntry = makeJournalEntryComponent(entry)
+    journalSection.innerHTML += newEntry
+}
 
 
-console.log(allJournalEntries);
+
+
+
+
+//use this as basis for building journal entries onto the DOM:
+
+// const messagesFragment = document.createDocumentFragment();
+
+// const makeMessage = (messageText) => {
+//     let newMessage = document.createElement('section');
+//     newMessage.className = "message";
+//     newMessage.textContent = messageText;
+//     messagesFragment.appendChild(newMessage);
+// };
+
+//makeMessage("Hi!!");
+
