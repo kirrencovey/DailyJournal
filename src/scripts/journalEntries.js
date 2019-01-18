@@ -19,7 +19,3 @@ let allJournalEntries = [
     }
 ];
 
-
-
-
-console.log(allJournalEntries);

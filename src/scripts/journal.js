@@ -28,6 +28,14 @@ for (let entry of allJournalEntries) {
 
 
 
+
+
+
+
+
+
+
+
 //use this as basis for building journal entries onto the DOM:
 
 // const messagesFragment = document.createDocumentFragment();
