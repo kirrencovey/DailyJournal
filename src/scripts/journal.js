@@ -3,7 +3,7 @@
 const makeJournalEntryComponent = (journalEntry) => { 
     return `
     <div class="journal__entry">
-    <h3>Concepts Covered: ${journalEntry.concepts}</h3>
+    <h3>${journalEntry.concepts}</h3>
     <h5>${journalEntry.date}</h4>
     <p>${journalEntry.entry}</p>
     <h4>Mood: ${journalEntry.mood}</h4>
