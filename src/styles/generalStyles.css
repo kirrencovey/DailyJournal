@@ -1,8 +1,12 @@
 body {
-    max-width: 900px;
+    max-width: 800px;
     margin: auto;
     background-color: rgb(245, 245, 245);
     color: lightseagreen;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+}
+
+h5 {
+    font-weight: normal;
 }
