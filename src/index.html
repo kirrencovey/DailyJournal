@@ -3,25 +3,27 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Daily Journal</title>
+    <title>Kirren's Daily Journal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/generalStyles.css">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/entryStyles.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles/formStyles.css" />
 </head>
 <body>
-    <h1>Daily Journal</h1>
+    <h1>Kirren's Daily Journal</h1>
+    <h5>A brief record of my time at Nashville Software School. (Full-Stack Web Developer Bootcamp, Cohort 30)</h5>
     <form action="">
         <fieldset>
             <label for="journalDate">Date of Entry</label>
             <input type="date" name="journalDate" id="journalDate">
         </fieldset>
         <fieldset>
-            <label for="conceptsCovered">Concepts Covered</label>
-            <input type="text" name="conceptsCovered" id="conceptsCovered">
+            <label for="concepts">Concepts / Exercises</label>
+            <input type="text" name="concepts" id="concepts">
         </fieldset>
         <fieldset>
             <label for="journalEntry">Journal Entry</label>
-            <textarea name="journalEntry" id="journalEntry" cols="30" rows="10"></textarea>
+            <textarea name="journalEntry" id="journalEntry" cols="100" rows="10"></textarea>
         </fieldset>
         <fieldset>
             <label for="mood">Mood for the Day</label>
@@ -30,7 +32,7 @@
                 <option value="sad">sad</option>
                 <option value="meh">meh</option>
                 <option value="confused">confused</option>
-                <option value="depressed">depressed</option>
+                <option value="overwhelmed">overwhelmed</option>
                 <option value="blerg">blerg.</option>
                 <option value="gotThis">I've got this!</option>
                 <option value="mixed">confused but excited!</option>
@@ -45,7 +47,5 @@
     </section>
 
 </body>
-<!-- <script src="scripts/journalEntries.js"></script> -->
 <script src="scripts/journalapi.js"></script>
-<!-- <script src="scripts/journal.js"></script> -->
 </html>

@@ -1,10 +1,10 @@
 const entryBuilder = (entry) => {    
     return `
     <div class="journal__entry">
-        <h3>${entry.concepts}</h3>
-        <h5>${entry.date}</h4>
-        <p>${entry.entry}</p>
-        <h4>Mood: ${entry.mood}</h4>
+        <section class="concepts">${entry.concepts}</section>
+        <section class="date">${entry.date}</section>
+        <section class="entry">${entry.entry}</section>
+        <section class="mood">Mood: ${entry.mood}</section>
     </div>
     `
 }
