@@ -1,5 +1,7 @@
 const journalSection = document.querySelector("#journal__section");
 const saveButton = document.querySelector("#journal__save");
+const form = document.querySelector("#journal__form");
+const moods = document.querySelector("#journal__mood");
 
 
 const entryBuilder = (entry) => {
@@ -8,7 +10,7 @@ const entryBuilder = (entry) => {
         <section class="concepts">${entry.concepts}</section>
         <section class="date">${entry.date}</section>
         <section class="entry">${entry.entry}</section>
-        <section class="mood">Mood: ${entry.mood}</section>
+        <section class="mood">${entry.mood}</section>
     </div>
     `;
 };
@@ -64,5 +66,16 @@ saveButton.addEventListener("click", (event) => {
     })
     let newEntry = entryBuilder(entryToSave);
     printEntry(newEntry);
+    form.reset();
 
 });
+
+
+// Dynamically populate mood drop-down menu
+
+const moodOptions = ["🐐🐐🐐", "happy 😊", "🤷‍♀️", "😒 blerg.", "🤔 confused", "dejected 😩", "sad 😭", "meh", "I've got this! 🙌", "confused but excited!"];
+
+moodOptions.forEach(mood => {
+    moods.innerHTML += `<option value="${mood}">${mood}</option>`;
+});
+

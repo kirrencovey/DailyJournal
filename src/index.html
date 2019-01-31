@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +10,13 @@
     <link rel="stylesheet" type="text/css" media="screen" href="styles/entryStyles.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles/formStyles.css" />
 </head>
+
 <body>
-    <h1>Kirren's Daily Journal</h1>
-    <h5>A brief record of my time at Nashville Software School. (Full-Stack Web Developer Bootcamp, Cohort 30)</h5>
+    <header>
+        <h1>Kirren's Daily Journal</h1>
+        <h5>A brief record of my time at Nashville Software School. (Full-Stack Web Developer Bootcamp, Cohort 30)</h5>
+    </header>
+    <form id="journal__form">
         <fieldset>
             <label for="journalDate">Date of Entry</label>
             <input id="journal__date" type="date" name="journalDate" id="journalDate">
@@ -27,24 +32,19 @@
         <fieldset>
             <label for="mood">Mood for the Day</label>
             <select id="journal__mood" name="mood" id="mood">
-                <option value="happy">happy</option>
-                <option value="sad">sad</option>
-                <option value="meh">meh</option>
-                <option value="confused">confused</option>
-                <option value="overwhelmed">overwhelmed</option>
-                <option value="blerg">blerg.</option>
-                <option value="gotThis">I've got this!</option>
-                <option value="mixed">confused but excited!</option>
+
             </select>
         </fieldset>
-        <button id="journal__save">Record Journal</button>
+    </form>
+    <button id="journal__save">Record Journal Entry</button>
 
-    <h1>Journal Entries</h1>
-    <section id="journal__section">
-
-    </section>
-
+    <div id="journal__entries">
+        <h1>Journal Entries</h1>
+        <section id="journal__section">
+        </section>
+    </div>
 </body>
 
 <script src="scripts/main.js"></script>
+
 </html>
