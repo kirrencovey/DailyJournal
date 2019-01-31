@@ -1,19 +1,74 @@
 {
-  "posts": [
+  "entries": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "date": "11 January 2019",
+      "concepts": "JS Object Basics",
+      "entry": "Learned what an object is and how it's structured. Setting and accessing values using dot notation and square bracket notation.",
+      "mood": "happy"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "date": "14 January 2019",
+      "concepts": "JS Function Practice",
+      "entry": "Did many practice exercises with functions. Pure and impure functions. ChickenMonkey.",
+      "mood": "I've got this!"
+    },
+    {
+      "date": "16 January 2019",
+      "concepts": "Building DOM Components",
+      "entry": "Used vanilla JS to build DOM components. Learned about rest operators. Created generic functions that can be used to construct all kinds of new DOM elements. Learned to use DOM fragments. Rest operators were harder to understand, as they didn't appear as readable.",
+      "mood": "blerg.",
+      "id": 3
+    },
+    {
+      "date": "17 January 2019",
+      "concepts": "Duck & Dovetail",
+      "entry": "Built a basic shopping site as a class, with a working shopping cart. Split off from the class with the goal of adding the ability to display, increment, and decrement quantity of items in the cart and adjust prices accordingly. Worked with .find() and event listeners for the first time. I got it working! (See duck-dovetail repo on github)",
+      "mood": "confused but excited!",
+      "id": 4
+    },
+    {
+      "date": "18 January 2019",
+      "concepts": "Tic-Tac-Toe",
+      "entry": "Tasked with building a working tic-tac-toe game. I got it working and am pleased with the result. I wrote working code then refactored it a couple times to make it dry. (See tic-tac-toe repo on github)",
+      "mood": "happy",
+      "id": 5
+    },
+    {
+      "date": "21 January 2019",
+      "concepts": "Fetching Data from an API",
+      "entry": "Built a small local .json list of foods. Fetched data from the local API, then used an outside API to gather additional data. Combined all the data to build HTML representations of the food list. First time using asynchronous programming. First intro to promises (and promises within promises). It was a lot of new info but makes sense as we talk through it in class. (See food-API repo on github)",
+      "mood": "happy",
+      "id": 6
+    },
+    {
+      "date": "2019-01-31",
+      "concepts": "test",
+      "entry": "is this working?",
+      "mood": "blerg",
+      "id": 7
+    },
+    {
+      "date": "2019-01-31",
+      "concepts": "another test",
+      "entry": "are you working yet?????",
+      "mood": "blerg",
+      "id": 8
+    },
+    {
+      "date": "2019-01-24",
+      "concepts": "testing",
+      "entry": "PLEASE WORK",
+      "mood": "meh",
+      "id": 9
+    },
+    {
+      "date": "2019-01-31",
+      "concepts": "DUCK",
+      "entry": "DUCK DUCK DUCK",
+      "mood": "blerg",
+      "id": 10
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
