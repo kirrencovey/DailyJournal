@@ -12,22 +12,21 @@
 <body>
     <h1>Kirren's Daily Journal</h1>
     <h5>A brief record of my time at Nashville Software School. (Full-Stack Web Developer Bootcamp, Cohort 30)</h5>
-    <form action="">
         <fieldset>
             <label for="journalDate">Date of Entry</label>
-            <input type="date" name="journalDate" id="journalDate">
+            <input id="journal__date" type="date" name="journalDate" id="journalDate">
         </fieldset>
         <fieldset>
             <label for="concepts">Concepts / Exercises</label>
-            <input type="text" name="concepts" id="concepts">
+            <input id="journal__concepts" type="text" name="concepts" id="concepts">
         </fieldset>
         <fieldset>
             <label for="journalEntry">Journal Entry</label>
-            <textarea name="journalEntry" id="journalEntry" cols="100" rows="10"></textarea>
+            <textarea id="journal__entry" name="journalEntry" id="journalEntry" cols="100" rows="10"></textarea>
         </fieldset>
         <fieldset>
             <label for="mood">Mood for the Day</label>
-            <select name="mood" id="mood">
+            <select id="journal__mood" name="mood" id="mood">
                 <option value="happy">happy</option>
                 <option value="sad">sad</option>
                 <option value="meh">meh</option>
@@ -38,14 +37,14 @@
                 <option value="mixed">confused but excited!</option>
             </select>
         </fieldset>
-        <button>Record Journal</button>
-    </form>
+        <button id="journal__save">Record Journal</button>
 
     <h1>Journal Entries</h1>
     <section id="journal__section">
-        
+
     </section>
 
 </body>
-<script src="scripts/journalapi.js"></script>
+
+<script src="scripts/main.js"></script>
 </html>
