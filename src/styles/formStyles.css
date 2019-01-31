@@ -12,8 +12,8 @@ fieldset {
 }
 
 button {
-    background-color: lightseagreen;
-    color: white;
+    background-color: #55C1AF;
+    color: #E9E3E6;
     font-weight: bold;
     font-size: 14px;
     border-radius: 10px;
@@ -21,16 +21,20 @@ button {
     margin-top: 10px;
 }
 
+h1 {
+    color: #4C5F6B;
+}
+
 select,
 textarea,
 input {
-    background-color: rgb(245, 245, 245);
+    background-color: #E9E3E6;
     font-family: 'Courier New', Courier, monospace;
 }
 
 #journal__form {
     border-radius: 10px;
-    border: 1px solid darkcyan;
+    border: 1px solid #55C1AF;
 }
 
 #journal__entries {
@@ -42,9 +46,10 @@ input {
 }
 
 .mood {
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: normal;
     font-family: 'Courier New', Courier, monospace;
+    color: #BCA0BC;
 }
 
 #journal__mood {
