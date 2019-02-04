@@ -1,37 +1,35 @@
 const journalSection = document.querySelector("#journal__section");
 const saveButton = document.querySelector("#journal__save");
+const form = document.querySelector("#journal__form");
+const moods = document.querySelector("#journal__mood");
 
-
+// Build HTML representation of journal entry
 const entryBuilder = (entry) => {
     return `
     <div class="journal__entry">
         <section class="concepts">${entry.concepts}</section>
         <section class="date">${entry.date}</section>
         <section class="entry">${entry.entry}</section>
-        <section class="mood">Mood: ${entry.mood}</section>
+        <section class="mood">${entry.mood}</section>
     </div>
     `;
 };
 
 // Print HTML representation of entries to the DOM:
-const printEntry = (entryHTML) => {
-    journalSection.innerHTML += entryHTML;
+const printEntry = (entry) => {
+    let newEntry = entryBuilder(entry);
+    journalSection.innerHTML += newEntry;
 };
 
 // Get journal entries from local API
-
 
 // const printJournalEntries = () => {
     fetch("http://localhost:8088/entries")
         .then(response => response.json())
         .then(myParsedEntries => {
             myParsedEntries.forEach(entry => {
-
-                // Produce HTML representation
-                const entryHTML = entryBuilder(entry);
-
-                // Add representaiton to DOM
-                printEntry(entryHTML);
+                // Build and add HTML representaiton to DOM
+                printEntry(entry);
             });
         });
 // }
@@ -62,7 +60,20 @@ saveButton.addEventListener("click", (event) => {
         },
         body: JSON.stringify(entryToSave)
     })
-    let newEntry = entryBuilder(entryToSave);
-    printEntry(newEntry);
-
+    // Once this fetch has finished, post the new entry to DOM
+        .then (r => r.json())
+        .then (() => {
+            printEntry(entryToSave)
+            form.reset();
+        })
 });
+
+
+// Dynamically populate mood drop-down menu
+
+const moodOptions = ["🐐🐐🐐", "happy 😊", "🤷‍♀️", "😒 blerg.", "🤔 confused", "dejected 😩", "sad 😭", "meh", "I've got this! 🙌", "confused but excited!"];
+
+moodOptions.forEach(mood => {
+    moods.innerHTML += `<option value="${mood}">${mood}</option>`;
+});
+

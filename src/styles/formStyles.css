@@ -1,24 +1,73 @@
+body {
+    max-width: 800px;
+    margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 fieldset {
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
-    border: 1px solid darkcyan;
     margin: 1em 0;
+    border: none;
 }
 
 button {
-    background-color: lightseagreen;
-    color: white;
+    background-color: #55C1AF;
+    color: #E9E3E6;
     font-weight: bold;
     font-size: 14px;
     border-radius: 10px;
     padding: 8px;
+    margin-top: 10px;
+}
+
+h1 {
+    color: #4C5F6B;
 }
 
 select,
 textarea,
 input {
-    background-color: rgb(245, 245, 245);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+    background-color: #E9E3E6;
+    font-family: 'Courier New', Courier, monospace;
 }
+
+#journal__form {
+    border-radius: 10px;
+    border: 1px solid #55C1AF;
+}
+
+#journal__entries {
+    margin-top: 80px;
+}
+
+.moodHolder {
+    display: flex;
+}
+
+.mood {
+    font-size: 1.3em;
+    font-weight: normal;
+    font-family: 'Courier New', Courier, monospace;
+    color: #BCA0BC;
+}
+
+#journal__mood {
+    height: 50px;
+    font-size: 1.3em;
+}
+
+
+
+/* COLORS:
+white           #E9E3E6
+lt purple       #BCA0BC
+dk blue         #004E64
+teal            #55C1AF
+dk grey         #4C5F6B
+near black      #2E3532
+dusty purple    #785964
+dusty teal      #82A7A6
+dark teal       #1E555C
+dark purple     #3A2E39
+*/
