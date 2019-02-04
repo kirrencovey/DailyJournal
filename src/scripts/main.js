@@ -3,7 +3,7 @@ const saveButton = document.querySelector("#journal__save");
 const form = document.querySelector("#journal__form");
 const moods = document.querySelector("#journal__mood");
 
-
+// Build HTML representation of journal entry
 const entryBuilder = (entry) => {
     return `
     <div class="journal__entry">
@@ -16,24 +16,20 @@ const entryBuilder = (entry) => {
 };
 
 // Print HTML representation of entries to the DOM:
-const printEntry = (entryHTML) => {
-    journalSection.innerHTML += entryHTML;
+const printEntry = (entry) => {
+    let newEntry = entryBuilder(entry);
+    journalSection.innerHTML += newEntry;
 };
 
 // Get journal entries from local API
-
 
 // const printJournalEntries = () => {
     fetch("http://localhost:8088/entries")
         .then(response => response.json())
         .then(myParsedEntries => {
             myParsedEntries.forEach(entry => {
-
-                // Produce HTML representation
-                const entryHTML = entryBuilder(entry);
-
-                // Add representaiton to DOM
-                printEntry(entryHTML);
+                // Build and add HTML representaiton to DOM
+                printEntry(entry);
             });
         });
 // }
@@ -64,10 +60,12 @@ saveButton.addEventListener("click", (event) => {
         },
         body: JSON.stringify(entryToSave)
     })
-    let newEntry = entryBuilder(entryToSave);
-    printEntry(newEntry);
-    form.reset();
-
+    // Once this fetch has finished, post the new entry to DOM
+        .then (r => r.json())
+        .then (() => {
+            printEntry(entryToSave)
+            form.reset();
+        })
 });
 
 

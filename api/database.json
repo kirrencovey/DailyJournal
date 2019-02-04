@@ -69,6 +69,27 @@
       "entry": "Learned that a factory function is any function that returns a new object. Did a few practice exercises writing factory functions.",
       "mood": "I've got this! 🙌",
       "id": 10
+    },
+    {
+      "date": "2019-02-13",
+      "concepts": "TEST",
+      "entry": "TEST",
+      "mood": "🤷‍♀️",
+      "id": 11
+    },
+    {
+      "date": "2019-02-06",
+      "concepts": "test",
+      "entry": "testing",
+      "mood": "🐐🐐🐐",
+      "id": 12
+    },
+    {
+      "date": "2019-02-06",
+      "concepts": "test",
+      "entry": "does it still work?",
+      "mood": "🐐🐐🐐",
+      "id": 13
     }
   ]
 }
