@@ -15,24 +15,27 @@ const entryBuilder = (entry) => {
     `;
 };
 
-// Print HTML representation of entries to the DOM:
+// Function to print HTML representation of entries to the DOM:
 const printEntry = (entry) => {
     let newEntry = entryBuilder(entry);
     journalSection.innerHTML += newEntry;
 };
 
-// Get journal entries from local API
 
-// const printJournalEntries = () => {
-    fetch("http://localhost:8088/entries")
-        .then(response => response.json())
-        .then(myParsedEntries => {
-            myParsedEntries.forEach(entry => {
-                // Build and add HTML representaiton to DOM
-                printEntry(entry);
-            });
+// Function to get journal entries from local API
+const getAllEntries = () => {
+    return fetch("http://localhost:8088/entries")
+    .then(response => response.json())
+}
+
+// Build HTML representaiton of all entries and add to DOM
+// Function retruns a fetch promise, .then() is a method used on a promise
+getAllEntries()
+    .then(myParsedEntries => {
+        myParsedEntries.forEach(entry => {
+            printEntry(entry);
         });
-// }
+    });
 
 
 // Event listener on save button that will add creation to json
@@ -67,6 +70,8 @@ saveButton.addEventListener("click", (event) => {
             form.reset();
         })
 });
+
+
 
 
 // Dynamically populate mood drop-down menu
