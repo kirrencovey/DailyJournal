@@ -1,7 +1,10 @@
-const journalSection = document.querySelector("#journal__section");
-const saveButton = document.querySelector("#journal__save");
-const form = document.querySelector("#journal__form");
-const moods = document.querySelector("#journal__mood");
+const $ = document.querySelector.bind(document);
+const journalSection = $("#journal__section");
+const saveButton = $("#journal__save");
+const form = $("#journal__form");
+const moods = $("#journal__mood");
+const moodFilter = $("#mood__buttons")
+let allEntries = [];
 
 // Build HTML representation of journal entry
 const entryBuilder = (entry) => {
@@ -15,24 +18,28 @@ const entryBuilder = (entry) => {
     `;
 };
 
-// Print HTML representation of entries to the DOM:
+// Function to print HTML representation of entries to the DOM:
 const printEntry = (entry) => {
-    let newEntry = entryBuilder(entry);
-    journalSection.innerHTML += newEntry;
+    journalSection.innerHTML += entry;
 };
 
-// Get journal entries from local API
 
-// const printJournalEntries = () => {
-    fetch("http://localhost:8088/entries")
-        .then(response => response.json())
-        .then(myParsedEntries => {
-            myParsedEntries.forEach(entry => {
-                // Build and add HTML representaiton to DOM
-                printEntry(entry);
-            });
+// Function to get journal entries from local API
+const getAllEntries = () => {
+    return fetch("http://localhost:8088/entries")
+    .then(response => response.json())
+}
+
+// Build HTML representaiton of all entries and add to DOM
+// Function retruns a fetch promise, .then() is a method used on a promise
+getAllEntries()
+    .then(myParsedEntries => {
+        allEntries = myParsedEntries;
+        myParsedEntries.forEach(entry => {
+            let html = entryBuilder(entry);
+            printEntry(html);
         });
-// }
+    });
 
 
 // Event listener on save button that will add creation to json
@@ -63,17 +70,48 @@ saveButton.addEventListener("click", (event) => {
     // Once this fetch has finished, post the new entry to DOM
         .then (r => r.json())
         .then (() => {
-            printEntry(entryToSave)
+            let html = entryBuilder(entryToSave);
+            printEntry(html)
             form.reset();
         })
 });
 
 
+
+
 // Dynamically populate mood drop-down menu
 
-const moodOptions = ["🐐🐐🐐", "happy 😊", "🤷‍♀️", "😒 blerg.", "🤔 confused", "dejected 😩", "sad 😭", "meh", "I've got this! 🙌", "confused but excited!"];
+const moodOptions = ["🐐🐐🐐", "happy 😊", "meh. 🤷‍♀️", "😒 blerg.", "🤔 confused", "dejected 😩", "sad 😭", "I've got this! 🙌", "confused but excited!"];
 
 moodOptions.forEach(mood => {
     moods.innerHTML += `<option value="${mood}">${mood}</option>`;
 });
 
+
+// Dynamically populate mood radio buttons
+
+moodOptions.forEach(mood => {
+    moodFilter.innerHTML += `
+        <div class="mood__button">
+            <input type="radio" name="moodButton" id="${mood}">
+            <label for="txt">${mood}</label>
+        </div>
+    `
+})
+
+
+// Event listener on mood filter buttons
+
+moodFilter.addEventListener("click", (event) => {
+    if (event.target.name === "moodButton"){
+        let selectedMood = event.target.id;
+
+        journalSection.innerHTML = "";
+
+        allEntries.filter((entry) => entry.mood === selectedMood)
+            .forEach((entry) => {
+                let html = entryBuilder(entry);
+                printEntry(html);
+            });
+    }
+})
