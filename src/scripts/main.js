@@ -17,8 +17,7 @@ const entryBuilder = (entry) => {
 
 // Function to print HTML representation of entries to the DOM:
 const printEntry = (entry) => {
-    let newEntry = entryBuilder(entry);
-    journalSection.innerHTML += newEntry;
+    journalSection.innerHTML += entry;
 };
 
 
@@ -33,7 +32,8 @@ const getAllEntries = () => {
 getAllEntries()
     .then(myParsedEntries => {
         myParsedEntries.forEach(entry => {
-            printEntry(entry);
+            let html = entryBuilder(entry);
+            printEntry(html);
         });
     });
 
@@ -66,7 +66,8 @@ saveButton.addEventListener("click", (event) => {
     // Once this fetch has finished, post the new entry to DOM
         .then (r => r.json())
         .then (() => {
-            printEntry(entryToSave)
+            let html = entryBuilder(entryToSave);
+            printEntry(html)
             form.reset();
         })
 });
