@@ -38,10 +38,15 @@
     </form>
     <button id="journal__save">Record Journal Entry</button>
 
-    <fieldset id="mood__filter">
-        <legend>Filter Entries by Mood</legend>
-        <div id="mood__buttons"></div>
-    </fieldset>
+    <section id="journal__filters">
+        <fieldset id="mood__filter">
+            <legend>Filter Entries by Mood</legend>
+            <div id="mood__buttons"></div>
+        </fieldset>
+        <fieldset>
+            <input type="text" id="search__filter" placeholder="enter search term"></input>
+        </fieldset>
+    </section>
 
     <div id="journal__entries">
         <h1>Journal Entries</h1>

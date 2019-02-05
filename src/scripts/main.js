@@ -4,6 +4,7 @@ const saveButton = $("#journal__save");
 const form = $("#journal__form");
 const moods = $("#journal__mood");
 const moodFilter = $("#mood__buttons")
+const searchFilter = $("#search__filter");
 let allEntries = [];
 
 // Build HTML representation of journal entry
@@ -105,7 +106,6 @@ moodOptions.forEach(mood => {
 moodFilter.addEventListener("click", (event) => {
     if (event.target.name === "moodButton"){
         let selectedMood = event.target.id;
-
         journalSection.innerHTML = "";
 
         allEntries.filter((entry) => entry.mood === selectedMood)
@@ -114,4 +114,28 @@ moodFilter.addEventListener("click", (event) => {
                 printEntry(html);
             });
     }
+})
+
+
+
+
+// Event listener on search bar
+
+searchFilter.addEventListener("keypress", (event) => {
+    if (event.keyCode === 13) {
+        let searchTerm = event.target.value.toLowerCase();
+        journalSection.innerHTML = "";
+
+        allEntries.forEach(entry => {
+            for (const value of Object.values(entry)) {
+                if (isNaN(value)) {
+                    if (value.toLowerCase().includes(searchTerm)) {
+                        let html = entryBuilder(entry);
+                        printEntry(html);
+                        return;
+                    }
+                }
+            }
+        });
+  }
 })

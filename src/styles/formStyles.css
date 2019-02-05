@@ -55,6 +55,10 @@ input {
     color: #BCA0BC;
 }
 
+#journal__filters {
+    display: flex;
+}
+
 #journal__mood {
     height: 50px;
     font-size: 1.3em;
