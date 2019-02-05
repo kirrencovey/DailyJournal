@@ -1,12 +1,33 @@
 body {
     max-width: 800px;
     margin: auto;
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(243, 240, 241);
     color: lightseagreen;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
 
+h1 {
+    color: #4C5F6B;
+}
+
 h5 {
     font-weight: normal;
 }
+
+
+
+
+
+/* COLORS:
+white           #E9E3E6
+lt purple       #BCA0BC
+dk blue         #004E64
+teal            #55C1AF
+dk grey         #4C5F6B
+near black      #2E3532
+dusty purple    #785964
+dusty teal      #82A7A6
+dark teal       #1E555C
+dark purple     #3A2E39
+*/

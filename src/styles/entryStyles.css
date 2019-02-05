@@ -21,6 +21,8 @@
 }
 
 .mood {
-    font-weight: bold;
-    margin-bottom: 15px;
+    font-size: 1.3em;
+    font-weight: normal;
+    font-family: 'Courier New', Courier, monospace;
+    color: #BCA0BC;
 }

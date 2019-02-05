@@ -7,8 +7,8 @@
     <title>Kirren's Daily Journal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/generalStyles.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/entryStyles.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/formStyles.css" />
+    <link rel="stylesheet" href="styles/entryStyles.css" />
+    <link rel="stylesheet" href="styles/formStyles.css" />
 </head>
 
 <body>
@@ -38,10 +38,15 @@
     </form>
     <button id="journal__save">Record Journal Entry</button>
 
-    <fieldset id="mood__filter">
-        <legend>Filter Entries by Mood</legend>
-        <div id="mood__buttons"></div>
-    </fieldset>
+    <section id="journal__filters">
+        <fieldset id="mood__filter">
+            <legend>Filter Entries by Mood</legend>
+            <div id="mood__buttons"></div>
+        </fieldset>
+        <fieldset>
+            <input type="text" id="search__filter" placeholder="enter search term"></input>
+        </fieldset>
+    </section>
 
     <div id="journal__entries">
         <h1>Journal Entries</h1>
@@ -51,5 +56,11 @@
 </body>
 
 <script src="scripts/main.js"></script>
+<script src="scripts/data.js"></script>
+<script src="scripts/entryBuilder.js"></script>
+<script src="scripts/moods.js"></script>
+<script src="scripts/saveEntry.js"></script>
+<script src="scripts/moodFilter.js"></script>
+<script src="scripts/textSearch.js"></script>
 
 </html>
