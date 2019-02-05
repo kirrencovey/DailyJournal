@@ -1,7 +1,10 @@
-const journalSection = document.querySelector("#journal__section");
-const saveButton = document.querySelector("#journal__save");
-const form = document.querySelector("#journal__form");
-const moods = document.querySelector("#journal__mood");
+const $ = document.querySelector.bind(document);
+const journalSection = $("#journal__section");
+const saveButton = $("#journal__save");
+const form = $("#journal__form");
+const moods = $("#journal__mood");
+const moodFilter = $("#mood__filter")
+let allEntries = [];
 
 // Build HTML representation of journal entry
 const entryBuilder = (entry) => {
@@ -31,6 +34,7 @@ const getAllEntries = () => {
 // Function retruns a fetch promise, .then() is a method used on a promise
 getAllEntries()
     .then(myParsedEntries => {
+        allEntries = myParsedEntries;
         myParsedEntries.forEach(entry => {
             let html = entryBuilder(entry);
             printEntry(html);
@@ -77,9 +81,37 @@ saveButton.addEventListener("click", (event) => {
 
 // Dynamically populate mood drop-down menu
 
-const moodOptions = ["🐐🐐🐐", "happy 😊", "🤷‍♀️", "😒 blerg.", "🤔 confused", "dejected 😩", "sad 😭", "meh", "I've got this! 🙌", "confused but excited!"];
+const moodOptions = ["🐐🐐🐐", "happy 😊", "meh. 🤷‍♀️", "😒 blerg.", "🤔 confused", "dejected 😩", "sad 😭", "I've got this! 🙌", "confused but excited!"];
 
 moodOptions.forEach(mood => {
     moods.innerHTML += `<option value="${mood}">${mood}</option>`;
 });
 
+
+// Dynamically populate mood radio buttons
+
+moodOptions.forEach(mood => {
+    moodFilter.innerHTML += `
+        <div>
+            <input type="radio" name="moodButton" id="${mood}">
+            <label for="txt">${mood}</label>
+        </div>
+    `
+})
+
+
+// Event listener on mood filter buttons
+
+moodFilter.addEventListener("click", (event) => {
+    if (event.target.name === "moodButton"){
+        let selectedMood = event.target.id;
+
+        journalSection.innerHTML = "";
+
+        allEntries.filter((entry) => entry.mood === selectedMood)
+            .forEach((entry) => {
+                let html = entryBuilder(entry);
+                printEntry(html);
+            });
+    }
+})

@@ -57,6 +57,11 @@ input {
     font-size: 1.3em;
 }
 
+#mood__filter {
+    border: .5px solid #004E64;
+    display: flex;
+    flex-flow: row wrap;
+}
 
 
 /* COLORS:
