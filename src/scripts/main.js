@@ -3,7 +3,7 @@ const journalSection = $("#journal__section");
 const saveButton = $("#journal__save");
 const form = $("#journal__form");
 const moods = $("#journal__mood");
-const moodFilter = $("#mood__filter")
+const moodFilter = $("#mood__buttons")
 let allEntries = [];
 
 // Build HTML representation of journal entry
@@ -92,7 +92,7 @@ moodOptions.forEach(mood => {
 
 moodOptions.forEach(mood => {
     moodFilter.innerHTML += `
-        <div>
+        <div class="mood__button">
             <input type="radio" name="moodButton" id="${mood}">
             <label for="txt">${mood}</label>
         </div>
